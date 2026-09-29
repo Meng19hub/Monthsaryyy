@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Monthsary, baby!</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bevan&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- crumpled paper texture -->
+<svg class="paper" aria-hidden="true" preserveAspectRatio="none">
+  <filter id="crumple" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.006 0.009" numOctaves="3" seed="11" result="n"/>
+    <feDiffuseLighting in="n" surfaceScale="30" diffuseConstant="1.08" lighting-color="#fffefb">
+      <feDistantLight azimuth="40" elevation="58"/>
+    </feDiffuseLighting>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#crumple)"/>
+</svg>
+<div class="vignette" aria-hidden="true"></div>
+
+<!-- ======================= 1. HOME ======================= -->
+<main id="home" class="screen active">
+  <div class="inner">
+    <svg class="bear" viewBox="0 0 64 72" aria-hidden="true">
+      <g stroke="#f6f4f0" stroke-width="4.5" stroke-linejoin="round" paint-order="stroke">
+        <circle cx="15" cy="13" r="8.5" fill="#8b5a3a"/><circle cx="49" cy="13" r="8.5" fill="#8b5a3a"/>
+        <ellipse cx="14" cy="49" rx="5.5" ry="9" fill="#8b5a3a" transform="rotate(18 14 49)"/>
+        <ellipse cx="50" cy="49" rx="5.5" ry="9" fill="#8b5a3a" transform="rotate(-18 50 49)"/>
+        <ellipse cx="23" cy="66" rx="8" ry="5.5" fill="#8b5a3a"/><ellipse cx="41" cy="66" rx="8" ry="5.5" fill="#8b5a3a"/>
+        <ellipse cx="32" cy="53" rx="15.5" ry="15" fill="#96633f"/>
+        <circle cx="32" cy="27" r="19.5" fill="#a06a44"/>
+      </g>
+      <circle cx="15" cy="13" r="4.2" fill="#d0a184"/><circle cx="49" cy="13" r="4.2" fill="#d0a184"/>
+      <ellipse cx="32" cy="56" rx="9.5" ry="10.5" fill="#dcb590"/>
+      <ellipse cx="32" cy="33" rx="8.5" ry="6.4" fill="#dcb590"/>
+      <ellipse cx="32" cy="30.4" rx="2.8" ry="1.9" fill="#3a2418"/>
+      <circle cx="25" cy="24" r="1.9" fill="#2a1810"/><circle cx="39" cy="24" r="1.9" fill="#2a1810"/>
+      <path d="M29.5 34.2q2.5 2 5 0" fill="none" stroke="#3a2418" stroke-width="1.2" stroke-linecap="round"/>
+    </svg>
+    <h1 id="homeTitle" class="script">Happy Monthsary, baby!</h1>
+    <p id="homeSub">wanna see my gift?</p>
+    <div class="row">
+      <button class="btn" id="yesBtn" data-go="menu">YES LOVIE</button>
+      <button class="btn" id="noBtn" data-go="sad">NO THANKS</button>
+    </div>
+  </div>
+</main>
+
+<!-- ======================= 2. SAD ======================= -->
+<section id="sad" class="screen" inert>
+  <div class="inner">
+    <svg class="sadface" viewBox="0 0 240 140" aria-hidden="true">
+      <ellipse class="cheek" cx="30" cy="84" rx="12" ry="8" fill="#f2a0b2" opacity=".85"/>
+      <ellipse class="cheek" cx="210" cy="84" rx="12" ry="8" fill="#f2a0b2" opacity=".85"/>
+      <g class="eye"><ellipse cx="72" cy="50" rx="24" ry="31" fill="#0f0f10"/>
+        <circle cx="80" cy="37" r="7.5" fill="#fff"/><circle cx="65" cy="68" r="3.6" fill="#fff"/></g>
+      <g class="eye"><ellipse cx="168" cy="50" rx="24" ry="31" fill="#0f0f10"/>
+        <circle cx="176" cy="37" r="7.5" fill="#fff"/><circle cx="161" cy="68" r="3.6" fill="#fff"/></g>
+      <path class="frown" d="M102 110 Q120 84 138 110" fill="none" stroke="#0f0f10" stroke-width="8" stroke-linecap="round"/>
+    </svg>
+    <p id="sadText">u sure, baby? i'm sure you'll love it :(</p>
+    <button class="btn lower" data-go="home">back</button>
+  </div>
+</section>
+
+<!-- ======================= 3. MENU ======================= -->
+<section id="menu" class="screen" inert>
+  <div class="inner">
+    <p id="menuTitle">pick and click !</p>
+    <div class="cards">
+      <button class="card" data-go="photos" aria-label="Open photos">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <rect x="12" y="20" width="76" height="60" rx="9"/>
+          <circle cx="66" cy="38" r="7"/>
+          <path d="M14 76 L38 50 L54 67 L65 57 L86 77"/>
+        </svg>
+      </button>
+      <button class="card mauve" data-go="letter" aria-label="Open letter">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <rect x="10" y="24" width="80" height="54" rx="9"/>
+          <path d="M12 31 L50 58 L88 31"/>
+          <path transform="translate(38.5 37) scale(.23)" d="M50 88 C10 55 0 30 12 14 C24 -2 45 4 50 22 C55 4 76 -2 88 14 C100 30 90 55 50 88Z" stroke-width="10"/>
+        </svg>
+      </button>
+      <button class="card" data-go="flowers" aria-label="Open flowers and song">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="40" cy="24" r="9"/><circle cx="40" cy="24" r="3.5"/>
+          <circle cx="60" cy="20" r="8"/><circle cx="60" cy="20" r="3"/>
+          <circle cx="33" cy="41" r="8"/><circle cx="33" cy="41" r="3"/>
+          <circle cx="52" cy="39" r="9"/><circle cx="52" cy="39" r="3.5"/>
+          <circle cx="70" cy="37" r="7.5"/>
+          <path d="M40 33 L48 66 M33 49 L46 66 M52 48 L52 66 M70 44 L56 66"/>
+          <path d="M50 66 C38 54 28 68 40 76 C46 78 50 72 50 66 C50 72 54 78 60 76 C72 68 62 54 50 66Z"/>
+          <path d="M47 74 L38 92 M53 74 L62 92"/>
+        </svg>
+      </button>
+    </div>
+    <p id="menuFooter">i hope you'll love them, baby</p>
+  </div>
+</section>
+
+<!-- ======================= 4. PHOTOS ======================= -->
+<section id="photos" class="screen" inert>
+  <div class="photos-inner">
+    <div class="strip">
+      <div class="frame" data-slot="0" role="button" tabindex="0" aria-label="Change photo 1"></div>
+      <div class="frame" data-slot="1" role="button" tabindex="0" aria-label="Change photo 2"></div>
+    </div>
+    <div class="mewhen" id="mewhen" aria-label="ME WHEN:"></div>
+    <div class="cluster">
+      <svg id="cluster" viewBox="0 0 330 268" role="group" aria-label="Photo collage"></svg>
+      <button class="btn lower" id="photosReturn" data-go="menu">return</button>
+    </div>
+    <p class="hint">psst — tap any photo to swap in your own</p>
+  </div>
+</section>
+
+<!-- ======================= 5. LETTER ======================= -->
+<section id="letter" class="screen" inert>
+  <div class="inner">
+    <h2 id="letterTitle" class="script">happy monthsary, lovie!</h2>
+    <p id="letterBody"></p>
+    <p id="letterSig" class="script"></p>
+    <button class="btn lower" data-go="menu">return</button>
+  </div>
+</section>
+
+<!-- ======================= 6. FLOWERS ======================= -->
+<section id="flowers" class="screen" inert>
+  <svg class="balloons" viewBox="0 0 90 170" aria-hidden="true">
+    <path d="M30 76 Q26 120 44 168" fill="none" stroke="#5a4a4a" stroke-width="1"/>
+    <path d="M62 96 Q66 130 52 168" fill="none" stroke="#5a4a4a" stroke-width="1"/>
+    <ellipse cx="30" cy="42" rx="26" ry="33" fill="#6e3a3c"/>
+    <path d="M30 75 l-4 6 h8z" fill="#6e3a3c"/>
+    <ellipse cx="21" cy="30" rx="6" ry="10" fill="#fff" opacity=".18" transform="rotate(20 21 30)"/>
+    <ellipse cx="62" cy="68" rx="22" ry="28" fill="#8c5147"/>
+    <path d="M62 95 l-3.5 5.5 h7z" fill="#8c5147"/>
+    <ellipse cx="54" cy="57" rx="5" ry="9" fill="#fff" opacity=".18" transform="rotate(20 54 57)"/>
+  </svg>
+
+  <div class="flowers-inner">
+    <div class="bouquet-card">
+      <svg class="bouquet" viewBox="0 0 200 290" aria-label="A bouquet of hearts">
+        <defs>
+          <path id="hrt" d="M50 88 C10 55 0 30 12 14 C24 -2 45 4 50 22 C55 4 76 -2 88 14 C100 30 90 55 50 88Z"/>
+        </defs>
+        <g class="sway">
+          <g stroke="#2a2a2e" stroke-width="1.6" fill="none" stroke-linecap="round">
+            <path d="M100 100 L99 190"/><path d="M52 92 Q78 150 96 190"/><path d="M148 84 Q124 150 104 190"/>
+            <path d="M38 52 Q66 140 94 192"/><path d="M148 44 Q132 140 106 192"/>
+          </g>
+          <use href="#hrt" transform="translate(16 26) scale(.42) rotate(-28 50 44)" fill="#d8a0ae"/>
+          <use href="#hrt" transform="translate(128 24) scale(.4) rotate(22 50 44)" fill="#a1435f"/>
+          <use href="#hrt" transform="translate(52 98) scale(.5) rotate(-8 50 44)" fill="#d29aa9"/>
+          <use href="#hrt" transform="translate(100 96) scale(.5) rotate(10 50 44)" fill="#b04f6c"/>
+          <use href="#hrt" transform="translate(20 58) scale(.62) rotate(-18 50 44)" fill="#b95c76"/>
+          <use href="#hrt" transform="translate(118 50) scale(.6) rotate(16 50 44)" fill="#cc8798"/>
+          <use href="#hrt" transform="translate(55 18) scale(.9)" fill="#8c2f53"/>
+
+          <path d="M30 126 Q100 150 172 114 L122 268 Q100 282 78 268 Z" fill="#ecdcc9" stroke="#2a2a2e" stroke-width="1.6" stroke-linejoin="round"/>
+          <path d="M30 126 Q66 146 100 156 L86 270 L78 268 Z" fill="#dcbcb8" stroke="#2a2a2e" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M100 156 L104 274 M172 114 Q130 170 108 268" fill="none" stroke="#2a2a2e" stroke-width="1" opacity=".6"/>
+          <path d="M96 194 L82 238 M104 194 L120 242" stroke="#2a2a2e" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+          <path d="M100 186 C74 168 58 196 84 204 C94 206 100 196 100 186Z" fill="#f6f0e8" stroke="#2a2a2e" stroke-width="1.6"/>
+          <path d="M100 186 C126 168 142 196 116 204 C106 206 100 196 100 186Z" fill="#f6f0e8" stroke="#2a2a2e" stroke-width="1.6"/>
+          <circle cx="100" cy="190" r="5" fill="#f6f0e8" stroke="#2a2a2e" stroke-width="1.6"/>
+          <path d="M75 208 Q90 196 98 194" fill="none" stroke="#2a2a2e" stroke-width="1"/>
+          <g transform="translate(62 208) rotate(-12)">
+            <rect width="22" height="28" rx="2" fill="#b96a83" stroke="#2a2a2e" stroke-width="1.4"/>
+            <circle cx="11" cy="5" r="1.8" fill="#f6f0e8"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+
+    <div class="right-col">
+      <h2 class="f-title script" id="fTitle"><span>flowers!</span><span>and a song 4 you</span></h2>
+
+      <div class="player" id="player" aria-label="Music player">
+        <div class="p-top">
+          <div class="p-meta">
+            <div class="p-title" id="pTitle">Our Little Song</div>
+            <div class="p-artist" id="pArtist">made for you</div>
+          </div>
+          <button class="ic plus" id="pAdd" title="Add your own song" aria-label="Add your own song">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+          </button>
+        </div>
+        
+        <input type="range" id="pSeek" min="0" max="1000" value="0" step="1" aria-label="Seek">
+        <div class="p-times"><span id="pCur">0:00</span><span id="pDur">-0:00</span></div>
+        <div class="p-ctrl">
+          <button class="ic" id="pShuffle" title="Shuffle" aria-label="Shuffle" aria-pressed="false">
+            <svg viewBox="0 0 24 24"><path d="M2 18h1.4c1.3 0 2.5-.6 3.3-1.7l6.1-8.6c.7-1.1 2-1.7 3.3-1.7H22"/><path d="m18 2 4 4-4 4"/><path d="M2 6h1.9c1.5 0 2.9.9 3.6 2.2"/><path d="M22 18h-5.9c-1.3 0-2.6-.7-3.3-1.8l-.5-.8"/><path d="m18 14 4 4-4 4"/></svg>
+          </button>
+          <button class="ic solid" id="pPrev" title="Previous" aria-label="Previous">
+            <svg viewBox="0 0 24 24"><path d="M19 20 9 12l10-8z"/><path d="M5 19V5"/></svg>
+          </button>
+          <button class="p-play" id="pPlay" aria-label="Play">
+            <svg viewBox="0 0 24 24" id="pPlayIcon"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>
+          </button>
+          <button class="ic solid" id="pNext" title="Next" aria-label="Next">
+            <svg viewBox="0 0 24 24"><path d="m5 4 10 8-10 8z"/><path d="M19 5v14"/></svg>
+          </button>
+          <button class="ic" id="pRepeat" title="Repeat" aria-label="Repeat" aria-pressed="false">
+            <svg viewBox="0 0 24 24"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
+          </button>
+        </div>
+
+        <div class="p-bot">
+          <button class="ic" id="pMute" title="Mute" aria-label="Mute">
+            <svg viewBox="0 0 24 24" id="pMuteIcon"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/></svg>
+          </button>
+          <button class="ic" id="pShare" title="Share" aria-label="Share">
+            <svg viewBox="0 0 24 24"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="m16 6-4-4-4 4"/><path d="M12 2v13"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <button class="btn lower" data-go="menu">return</button>
+    </div>
+  </div>
+</section>
+
+<input type="file" id="photoInput" accept="image/*" hidden>
+<input type="file" id="songInput" accept="audio/*" hidden multiple>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
